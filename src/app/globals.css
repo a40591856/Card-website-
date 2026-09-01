@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-grass-50: #f1f7f0;
+  --color-grass-100: #e1efe0;
+  --color-grass-200: #c4e2c2;
+  --color-grass-300: #9ccd9a;
+  --color-grass-400: #6fb772;
+  --color-grass-500: #4caf50;
+  --color-grass-600: #43a047;
+  --color-grass-700: #388e3c;
+  --color-grass-800: #2e7d32;
+  --color-ink-900: #1c2a1c;
+  --color-ink-600: #4c5b4c;
+  --color-ink-400: #8b988b;
+  --color-line: #e2e8e2;
+  --color-sheet: #dcefdb;
+  --font-sans: "Tajawal", "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  --accent: #43a047;
+  --accent-strong: #2e7d32;
+  --note-font: 15px;
+  --bg: #f3f6f3;
+  --surface: #ffffff;
+  --surface-2: #f1f7f0;
+  --text: #1c2a1c;
+  --text-soft: #4c5b4c;
+  --text-mute: #8b988b;
+  --border: #e2e8e2;
+}
+
+html.dark {
+  --bg: #10151a;
+  --surface: #1a2028;
+  --surface-2: #222b34;
+  --text: #e8eef2;
+  --text-soft: #b3bdc7;
+  --text-mute: #7d8894;
+  --border: #2c3742;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s, color 0.2s;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-mute);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
